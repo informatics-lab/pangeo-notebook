@@ -23,24 +23,23 @@ RUN bash -c "source activate python2 && \
 RUN conda install -y -c r r-essentials
 
 #Clojure
-RUN update-ca-certificates -f
-RUN curl -k https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein > /usr/local/bin/lein
-RUN apt-get update
-RUN chmod +x /usr/local/bin/lein
-RUN apt-get install -y default-jre
-RUN git clone https://github.com/roryk/clojupyter
-RUN mkdir -p /etc/pki/tls/certs && ln -s /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
-RUN apt-get -y install make cmake
-RUN cd clojupyter && make && make install && cd .. && rm -rf clojupyter
+# RUN update-ca-certificates -f
+# RUN curl -k https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein > /usr/local/bin/lein
+# RUN apt-get update
+# RUN chmod +x /usr/local/bin/lein
+# RUN apt-get install -y default-jre
+# RUN git clone https://github.com/roryk/clojupyter
+# RUN mkdir -p /etc/pki/tls/certs && ln -s /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
+# RUN apt-get -y install make cmake
+# RUN cd clojupyter && make && make install && cd .. && rm -rf clojupyter
 
 
 # Scala
-RUN curl -L -o coursier https://git.io/vgvpD && chmod +x coursier && mv ./coursier /bin/
-RUN curl -L -o jupyter-scala https://git.io/vrHhi && \
-    chmod +x jupyter-scala && \
-    ./jupyter-scala && rm -f jupyter-scala
+# RUN curl -L -o coursier https://git.io/vgvpD && chmod +x coursier && mv ./coursier /bin/
+# RUN curl -L -o jupyter-scala https://git.io/vrHhi && \
+#     chmod +x jupyter-scala && \
+#     ./jupyter-scala && rm -f jupyter-scala
 
 # custom JADE extions
-
 RUN pip install --upgrade git+https://github.com/met-office-lab/jade_utils
 RUN bash -c "source activate python2 && pip install --upgrade git+https://github.com/met-office-lab/jade_utils"
