@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook:latest
+FROM jupyter/scipy-notebook:7fd175ec22c7
 
 # Python 3 packages
 RUN conda install -y boto3
@@ -6,10 +6,12 @@ RUN conda install -y -c scitools iris cartopy
 RUN conda install -y dask distributed
 RUN conda install -y -c conda-forge jupyter_contrib_nbextensions jupyter_dashboards nbpresent
 
+RUN bash -c "conda create -y -n python2 python=2.7.14 anaconda"
+
 # Python 2 packages
 RUN bash -c "source activate python2 && \
              conda install -y -c scitools iris cartopy"
-RUN bash -c "source activate python2 && jupyter kernelspec install-self"
+RUN bash -c "source activate python2 && ipython kernel install --user"
 
 # SHARPpy - https://github.com/sharppy/SHARPpy
 RUN bash -c "source activate python2 && \
