@@ -8,7 +8,7 @@ RUN conda install -y -c conda-forge jupyter_contrib_nbextensions jupyter_dashboa
 
 # s3-fuse
 RUN apt-get install libfuse-dev -y
-RUN conda install -c bioconda -c anaconda -c conda-forge  -y fusepy boto3 smart_open
+RUN conda install -c bioconda -c anaconda -c conda-forge  -y fusepy boto3
 
 
 RUN bash -c "conda create -y -n python2 python=2.7.14 anaconda"
