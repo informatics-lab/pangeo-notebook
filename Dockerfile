@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook:e1677043235c
+FROM jupyter/scipy-notebook:c7fb6660d096
 
 # Python 3 packages
 RUN conda install -y boto3
