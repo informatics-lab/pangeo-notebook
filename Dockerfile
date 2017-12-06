@@ -1,10 +1,20 @@
 FROM jupyter/scipy-notebook:c7fb6660d096
 
+# Root
+USER root
+RUN apt-get update -y && apt-get install -y libfuse-dev
+
+USER jovyan
+
 # Python 3 packages
 RUN conda install -y boto3
 RUN conda install -y -c scitools iris cartopy
 RUN conda install -y dask distributed
 RUN conda install -y -c conda-forge jupyter_contrib_nbextensions jupyter_dashboards nbpresent
+
+# s3-fuse
+RUN conda install -c bioconda -c anaconda -c conda-forge  -y fusepy boto3
+
 
 RUN bash -c "conda create -y -n python2 python=2.7.14 anaconda"
 
