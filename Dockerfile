@@ -2,7 +2,7 @@ FROM jupyter/scipy-notebook:c7fb6660d096
 
 # Root
 USER root
-RUN apt-get update -y && apt-get install -y libfuse-dev
+RUN apt-get update -y && apt-get install -y libfuse-dev graphviz
 
 USER jovyan
 
