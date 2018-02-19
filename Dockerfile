@@ -50,6 +50,10 @@ RUN conda install -y -c r r-essentials
 #     chmod +x jupyter-scala && \
 #     ./jupyter-scala && rm -f jupyter-scala
 
+# Install extentions
+RUN pip install git+https://github.com/jupyterhub/nbserverproxy
+RUN jupyter serverextension enable --py nbserverproxy --sys-prefix --system
+
 # custom JADE extions
 RUN pip install --upgrade git+https://github.com/met-office-lab/jade_utils
 RUN bash -c "source activate python2 && pip install --upgrade git+https://github.com/met-office-lab/jade_utils"
