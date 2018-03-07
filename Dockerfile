@@ -12,7 +12,7 @@ RUN apt-get update -y && apt-get install -y libfuse-dev graphviz
 # Install jupyter server extentions
 RUN pip install git+https://github.com/jupyterhub/nbserverproxy
 RUN jupyter serverextension enable --py nbserverproxy --sys-prefix --system
-RUN jupyter labextension install @jupyterlab/hub-extension
+RUN jupyter labextension install @jupyterlab/hub-extension jupyterlab_bokeh
 
 
 #####################################################################
