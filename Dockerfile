@@ -22,7 +22,7 @@ RUN jupyter labextension install @jupyterlab/hub-extension jupyterlab_bokeh
 USER jovyan
 
 # Install extra Python 3 packages
-RUN conda install -y -c conda-forge -c scitools -c bioconda iris cartopy dask distributed jupyter_contrib_nbextensions jupyter_dashboards nbpresent fusepy boto3 && conda clean --tarballs -y
+RUN conda install -y -c conda-forge -c scitools -c bioconda iris pyke cartopy dask distributed jupyter_contrib_nbextensions jupyter_dashboards nbpresent fusepy boto3 && conda clean --tarballs -y
 RUN pip install --upgrade git+https://github.com/met-office-lab/jade_utils dask-kubernetes graphviz tornado==4.5.3
 
 # Install R
