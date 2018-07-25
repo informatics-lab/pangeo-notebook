@@ -1,10 +1,12 @@
 # pangeo-notebook
 
-[![Docker Image](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/informaticslab/singleuser-notebook/) [![Docker Layers](https://images.microbadger.com/badges/image/informaticslab/singleuser-notebook.svg)](https://microbadger.com/#/images/informaticslab/singleuser-notebook)
+[![Build Status](https://travis-ci.com/informatics-lab/pangeo-notebook.svg?branch=master)](https://travis-ci.com/informatics-lab/pangeo-notebook)
+[![Docker Image](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/informaticslab/pangeo-notebook/)
+[![Docker Layers](https://images.microbadger.com/badges/image/informaticslab/pangeo-notebook.svg)](https://microbadger.com/#/images/informaticslab/pangeo-notebook)
 
 This image was previously called `singleuser-notebook`.
 
-This is a docker image which containers [Jupyter Notebook](https://github.com/jupyter/notebook) and [Jupyter Lab](https://github.com/jupyterlab/jupyterlab) along with a sensible Python envirnoment for performing environmental science analysis activities.
+This is a docker image which contains [Jupyter Notebook](https://github.com/jupyter/notebook) and [Jupyter Lab](https://github.com/jupyterlab/jupyterlab) along with a sensible Python envirnoment for performing environmental science analysis activities.
 
 ## Usage
 

@@ -9,12 +9,10 @@ services:
 
 script:
   - docker build -t informatics-lab/pangeo-notebook:$TRAVIS_COMMIT .
-
-before_deploy:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker tag informatics-lab/pangeo-notebook:$TRAVIS_COMMIT informatics-lab/pangeo-notebook:latest
 
 deploy:
   provider: script
-  script: docker push informatics-lab/pangeo-notebook:$TRAVIS_COMMIT
+  script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push informatics-lab/pangeo-notebook:$TRAVIS_COMMIT && docker push informatics-lab/pangeo-notebook:latest
   on:
     branch: master
