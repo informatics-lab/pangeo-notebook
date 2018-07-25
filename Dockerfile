@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook:92fe05d1e7e5
+FROM pangeo/notebook:2d5c8b4
 
 #####################################################################
 # Root                                                              #
@@ -7,11 +7,9 @@ FROM jupyter/scipy-notebook:92fe05d1e7e5
 USER root
 
 # Install system packages
-RUN apt-get update -y && apt-get install -y libfuse-dev graphviz ssh
+RUN apt-get update -y && apt-get install -y ssh
 
 # Install jupyter server extentions
-RUN pip install git+https://github.com/jupyterhub/nbserverproxy
-RUN jupyter serverextension enable --py nbserverproxy --sys-prefix --system
 RUN jupyter labextension install @jupyterlab/hub-extension jupyterlab_bokeh
 
 
@@ -19,11 +17,26 @@ RUN jupyter labextension install @jupyterlab/hub-extension jupyterlab_bokeh
 # User                                                              #
 #####################################################################
 
-USER jovyan
+USER $NB_USER
 
 # Install extra Python 3 packages
-RUN conda install -y -c conda-forge -c scitools -c bioconda iris xarray pyke cartopy dask distributed jupyter_contrib_nbextensions jupyter_dashboards nbpresent fusepy boto3 zarr && conda clean --tarballs -y
-RUN pip install --upgrade git+https://github.com/met-office-lab/jade_utils dask-kubernetes graphviz tornado==4.5.3
+RUN conda install --yes \
+    -c conda-forge \
+    -c scitools \
+    -c bioconda \
+    boto3  \
+    cartopy \
+    fusepy \
+    iris \
+    jupyter_dashboards \
+    nbpresent \
+    && conda clean --tarballs -y
+
+# RUN pip install --upgrade \
+#     git+https://github.com/met-office-lab/jade_utils
 
 # Install R
-RUN conda install -y -c r r-essentials && conda clean --tarballs -y
+RUN conda install --yes \
+    -c r \
+    r-essentials \
+    && conda clean --tarballs -y
