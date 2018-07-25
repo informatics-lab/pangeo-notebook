@@ -7,7 +7,7 @@ FROM jupyter/scipy-notebook:92fe05d1e7e5
 USER root
 
 # Install system packages
-RUN apt-get update -y && apt-get install -y libfuse-dev graphviz
+RUN apt-get update -y && apt-get install -y libfuse-dev graphviz ssh
 
 # Install jupyter server extentions
 RUN pip install git+https://github.com/jupyterhub/nbserverproxy
