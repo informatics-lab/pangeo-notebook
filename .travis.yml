@@ -11,7 +11,8 @@ script:
   - docker build -t informatics-lab/pangeo-notebook:$TRAVIS_COMMIT .
 
 deploy:
+  skip_cleanup: true
   provider: script
-  script: deploy.sh
+  script: sh $TRAVIS_BUILD_DIR/deploy.sh
   on:
     branch: master

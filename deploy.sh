@@ -3,7 +3,7 @@
 set -e
 
 # Login
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
 
 # Add new tags
 docker tag informatics-lab/pangeo-notebook:$TRAVIS_COMMIT informatics-lab/pangeo-notebook:latest
