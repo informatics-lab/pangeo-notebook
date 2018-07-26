@@ -8,7 +8,7 @@ services:
   - docker
 
 script:
-  - docker build -t informatics-lab/pangeo-notebook:$TRAVIS_COMMIT .
+  - docker build -t informaticslab/pangeo-notebook:$TRAVIS_COMMIT .
 
 deploy:
   skip_cleanup: true
