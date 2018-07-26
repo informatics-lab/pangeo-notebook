@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Login
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
