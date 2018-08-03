@@ -33,8 +33,9 @@ RUN conda install --yes \
     nbpresent \
     && conda clean --tarballs -y
 
-# RUN pip install --upgrade \
-#     git+https://github.com/met-office-lab/jade_utils
+# Add Pete's fork of iris with lazy RMS 3/8/18. Remove after Iris 2.2.
+RUN pip install --upgrade \
+    https://github.com/dkillick/iris/archive/lazy_rms_agg.zip
 
 # Install R
 RUN conda install --yes \
