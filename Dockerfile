@@ -28,6 +28,7 @@ RUN conda install --yes \
     cartopy \
     fusepy \
     iris \
+    nc-time-axis \
     jupyter_dashboards \
     nbpresent \
     && conda clean --tarballs -y
