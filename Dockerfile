@@ -7,7 +7,7 @@ FROM pangeo/notebook:2d5c8b4
 USER root
 
 # Install system packages
-RUN apt-get update -y && apt-get install -y ssh
+RUN apt-get update -y && apt-get install -y ssh libgl1-mesa-glx
 
 # Install jupyter server extentions
 RUN jupyter labextension install @jupyterlab/hub-extension jupyterlab_bokeh
