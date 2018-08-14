@@ -36,9 +36,3 @@ RUN conda install --yes \
 # Add Pete's fork of iris with lazy RMS 3/8/18. Remove after Iris 2.2.
 RUN pip install --upgrade \
     https://github.com/dkillick/iris/archive/lazy_rms_agg.zip
-
-# Install R
-RUN conda install --yes \
-    -c r \
-    r-essentials \
-    && conda clean --tarballs -y
