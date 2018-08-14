@@ -10,7 +10,7 @@ USER root
 RUN apt-get update -y && apt-get install -y ssh libgl1-mesa-glx
 
 # Install jupyter server extentions
-RUN jupyter labextension install @jupyterlab/hub-extension jupyterlab_bokeh
+RUN jupyter labextension install @jupyterlab/hub-extension @jupyterlab/plotly-extension jupyterlab_bokeh
 
 
 #####################################################################
@@ -26,6 +26,7 @@ RUN conda install --yes \
     -c bioconda \
     boto3  \
     cartopy \
+    plotly \
     fusepy \
     iris \
     nc-time-axis \
