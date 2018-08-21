@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.com/informatics-lab/pangeo-notebook.svg?branch=master)](https://travis-ci.com/informatics-lab/pangeo-notebook)
 [![Docker Image](https://img.shields.io/badge/docker-ready-blue.svg)](https://hub.docker.com/r/informaticslab/pangeo-notebook/)
 [![Docker Layers](https://images.microbadger.com/badges/image/informaticslab/pangeo-notebook.svg)](https://microbadger.com/#/images/informaticslab/pangeo-notebook)
+[![Docker Layers](https://img.shields.io/github/release/informatics-lab/pangeo-notebook.svg)](https://hub.docker.com/r/informaticslab/pangeo-notebook/tags/)
 
 This image was previously called `singleuser-notebook`.
 

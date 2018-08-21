@@ -10,7 +10,7 @@ USER root
 RUN apt-get update -y && apt-get install -y ssh libgl1-mesa-glx
 
 # Install jupyter server extentions
-RUN jupyter labextension install @jupyterlab/hub-extension jupyterlab_bokeh
+RUN jupyter labextension install @jupyterlab/hub-extension @jupyterlab/plotly-extension jupyterlab_bokeh
 
 
 #####################################################################
@@ -26,6 +26,7 @@ RUN conda install --yes \
     -c bioconda \
     boto3  \
     cartopy \
+    plotly \
     fusepy \
     iris \
     nc-time-axis \
@@ -37,9 +38,3 @@ RUN conda install --yes \
 # Add Pete's fork of iris with lazy RMS 3/8/18. Remove after Iris 2.2.
 RUN pip install --upgrade \
     https://github.com/dkillick/iris/archive/lazy_rms_agg.zip
-
-# Install R
-RUN conda install --yes \
-    -c r \
-    r-essentials \
-    && conda clean --tarballs -y
