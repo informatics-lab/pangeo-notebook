@@ -31,6 +31,7 @@ RUN conda install --yes \
     nc-time-axis \
     jupyter_dashboards \
     nbpresent \
+    cryptography>=2.3 \
     && conda clean --tarballs -y
 
 # Add Pete's fork of iris with lazy RMS 3/8/18. Remove after Iris 2.2.
