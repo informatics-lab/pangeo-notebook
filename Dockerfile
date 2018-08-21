@@ -1,4 +1,4 @@
-FROM pangeo/notebook:2d5c8b4
+FROM pangeo/notebook:78d567a
 
 #####################################################################
 # Root                                                              #
