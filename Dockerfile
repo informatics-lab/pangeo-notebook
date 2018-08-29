@@ -7,10 +7,21 @@ FROM pangeo/notebook:78d567a
 USER root
 
 # Install system packages
-RUN apt-get update -y && apt-get install -y ssh libgl1-mesa-glx
+RUN apt-get update -y && apt-get install -y \
+    ssh \
+    libgl1-mesa-glx
+
+# Update Jupyter Lab
+RUN conda install --yes \
+    -c conda-forge \
+    jupyterlab==0.34.5
 
 # Install jupyter server extentions
-RUN jupyter labextension install @jupyterlab/hub-extension @jupyterlab/plotly-extension jupyterlab_bokeh
+RUN jupyter labextension install \
+    @jupyterlab/hub-extension \
+    @jupyterlab/plotly-extension \
+    @jupyterlab/statusbar \
+    jupyterlab_bokeh
 
 
 #####################################################################
@@ -34,6 +45,9 @@ RUN conda install --yes \
     nbpresent \
     cryptography>=2.3 \
     && conda clean --tarballs -y
+
+RUN pip install --upgrade \
+    nbresuse
 
 # Add Pete's fork of iris with lazy RMS 3/8/18. Remove after Iris 2.2.
 RUN pip install --upgrade \
