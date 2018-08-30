@@ -11,18 +11,6 @@ RUN apt-get update -y && apt-get install -y \
     ssh \
     libgl1-mesa-glx
 
-# Update Jupyter Lab
-RUN conda install --yes \
-    -c conda-forge \
-    jupyterlab==0.34.5
-
-# Install jupyter server extentions
-RUN jupyter labextension install \
-    @jupyterlab/hub-extension \
-    @jupyterlab/plotly-extension \
-    @jupyterlab/statusbar \
-    jupyterlab_bokeh
-
 
 #####################################################################
 # User                                                              #
@@ -35,6 +23,7 @@ RUN conda install --yes \
     -c conda-forge \
     -c scitools \
     -c bioconda \
+    jupyterlab==0.34.5 \
     boto3  \
     cartopy \
     plotly \
@@ -48,6 +37,13 @@ RUN conda install --yes \
 
 RUN pip install --upgrade \
     nbresuse
+
+# Install jupyter server extentions
+RUN jupyter labextension install \
+    @jupyterlab/hub-extension \
+    @jupyterlab/plotly-extension \
+    @jupyterlab/statusbar \
+    jupyterlab_bokeh
 
 # Add Pete's fork of iris with lazy RMS 3/8/18. Remove after Iris 2.2.
 RUN pip install --upgrade \
