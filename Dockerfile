@@ -39,6 +39,7 @@ RUN pip install --upgrade \
     nbresuse
 
 # Install jupyter server extentions
+RUN jupyter labextension update --all
 RUN jupyter labextension install \
     @jupyterlab/hub-extension \
     @jupyterlab/plotly-extension \
