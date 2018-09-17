@@ -23,6 +23,7 @@ RUN conda install --yes \
     -c conda-forge \
     -c scitools \
     -c bioconda \
+    -c informaticslab \
     jupyterlab==0.34.5 \
     boto3  \
     cartopy \
@@ -33,6 +34,8 @@ RUN conda install --yes \
     jupyter_dashboards \
     nbpresent \
     cryptography>=2.3 \
+    intake-iris \
+    data-ncic-pangeo \
     && conda clean --tarballs -y
 
 RUN pip install --upgrade \
