@@ -34,7 +34,10 @@ RUN conda install --yes \
     jupyter_dashboards \
     nbpresent \
     cryptography>=2.3 \
-    intake-iris \
+    intake_iris \
+    intake_s3_manifests \
+    intake_dynamodb \
+    jade_utils \
     data-ncic-pangeo \
     mo_pack \
     && conda clean --tarballs -y
