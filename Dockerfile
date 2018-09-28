@@ -36,6 +36,7 @@ RUN conda install --yes \
     cryptography>=2.3 \
     intake-iris \
     data-ncic-pangeo \
+    mo_pack \
     && conda clean --tarballs -y
 
 RUN pip install --upgrade \
