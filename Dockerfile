@@ -38,7 +38,7 @@ RUN conda install --yes \
     intake_s3_manifests \
     intake_dynamodb \
     jade_utils \
-    data-ncic-pangeo \
+    data_ncic_pangeo \
     mo_pack \
     && conda clean --tarballs -y
 
