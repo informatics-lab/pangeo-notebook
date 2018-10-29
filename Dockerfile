@@ -31,13 +31,14 @@ RUN conda install --yes \
     plotly \
     fusepy \
     iris \
+    intake==0.2.7 \
+    intake_iris \
+    intake_s3_manifests \
+    intake_dynamodb \
     nc-time-axis \
     jupyter_dashboards \
     nbpresent \
     cryptography>=2.3 \
-    intake_iris \
-    intake_s3_manifests \
-    intake_dynamodb \
     jade_utils \
     data_ncic_pangeo \
     mo_pack \
