@@ -25,6 +25,7 @@ RUN conda install --yes \
     -c scitools \
     -c bioconda \
     -c informaticslab \
+    -c intake \
     jupyterlab==0.34.5 \
     boto3  \
     cartopy \
