@@ -34,6 +34,7 @@ RUN conda install --yes \
     distributed>=1.24.0 \
     plotly \
     fusepy \
+    fiona \
     hvplot \
     iris \
     intake>=0.2.7 \
