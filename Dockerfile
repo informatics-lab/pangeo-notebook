@@ -26,16 +26,19 @@ RUN conda install --yes \
     -c bioconda \
     -c informaticslab \
     -c intake \
+    -c pyviz \
     jupyterlab==0.34.5 \
     boto3  \
     cartopy \
     plotly \
     fusepy \
+    hvplot \
     iris \
     intake==0.2.7 \
     intake_iris \
     intake_s3_manifests \
     intake_dynamodb \
+    ipyleaflet \
     nc-time-axis \
     jupyter_dashboards \
     nbpresent \
@@ -46,7 +49,8 @@ RUN conda install --yes \
     && conda clean --tarballs -y
 
 RUN pip install --upgrade \
-    nbresuse
+    nbresuse \
+    sidecar
 
 # Install jupyter server extentions
 RUN jupyter labextension update --all
@@ -54,7 +58,11 @@ RUN jupyter labextension install \
     @jupyterlab/hub-extension \
     @jupyterlab/plotly-extension \
     @jupyterlab/statusbar \
-    jupyterlab_bokeh
+    @jupyter-widgets/jupyterlab-sidecar \
+    @pyviz/jupyterlab_pyviz \
+    dask-labextension \
+    jupyterlab_bokeh \
+    jupyter-leaflet
 
 # Add Pete's fork of iris with lazy RMS 3/8/18. Remove after Iris 2.2.
 RUN pip install --upgrade \
