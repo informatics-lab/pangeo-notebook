@@ -31,12 +31,12 @@ RUN conda install --yes \
     boto3  \
     bokeh>=0.13.0 \
     cartopy \
-    distributed==1.24.0 \
+    distributed>=1.24.0 \
     plotly \
     fusepy \
     hvplot \
     iris \
-    intake==0.2.7 \
+    intake>=0.2.7 \
     intake_iris \
     intake_s3_manifests \
     intake_dynamodb \
@@ -51,6 +51,7 @@ RUN conda install --yes \
     && conda clean --tarballs -y
 
 RUN pip install --upgrade \
+    dask_kubernetes==0.6.0 \
     nbresuse \
     sidecar
 
