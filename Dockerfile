@@ -44,6 +44,7 @@ RUN conda install --yes \
     nc-time-axis \
     jupyter_dashboards \
     nbpresent \
+    pandas>=0.23.4 \
     cryptography>=2.3 \
     jade_utils \
     data_ncic_pangeo \
