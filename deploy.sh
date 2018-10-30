@@ -14,7 +14,7 @@ for REPOSITORY in 'informaticslab/pangeo-notebook' '536099501702.dkr.ecr.eu-west
     # If this is a tagged commit push that tag and update latest
     if [ "$TRAVIS_TAG" = "" ]; then
         # Push the image to Docker Hub
-        docker tag pangeo-notebook:${TRAVIS_COMMIT:0:8} REPOSITORY:${TRAVIS_COMMIT:0:8}
+        docker tag pangeo-notebook:${TRAVIS_COMMIT:0:8} ${REPOSITORY}:${TRAVIS_COMMIT:0:8}
         docker push ${REPOSITORY}:${TRAVIS_COMMIT:0:8}
 
         # Replace the dev tag with the latest commit
