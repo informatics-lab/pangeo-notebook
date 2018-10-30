@@ -43,6 +43,7 @@ RUN conda install --yes \
     intake_dynamodb \
     ipyleaflet \
     nc-time-axis \
+    ncurses \
     jupyter_dashboards \
     nbpresent \
     pandas>=0.23.4 \
