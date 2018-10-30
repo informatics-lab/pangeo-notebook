@@ -30,6 +30,7 @@ RUN conda install --yes \
     jupyterlab==0.34.5 \
     boto3  \
     cartopy \
+    distributed==1.24.0 \
     plotly \
     fusepy \
     hvplot \
