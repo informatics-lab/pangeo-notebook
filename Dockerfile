@@ -32,6 +32,7 @@ RUN conda install --yes \
     bokeh>=0.13.0 \
     cartopy \
     distributed>=1.24.0 \
+    gdal \
     plotly \
     fusepy \
     fiona \
