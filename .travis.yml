@@ -11,7 +11,7 @@ script:
   - docker build -t pangeo-notebook:${TRAVIS_COMMIT:0:8} .
 
 before_deploy:
-  - pip install --user awscli
+  - pip install awscli
 
 deploy:
   - provider: script
