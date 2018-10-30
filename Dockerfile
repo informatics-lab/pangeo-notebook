@@ -29,6 +29,7 @@ RUN conda install --yes \
     -c pyviz \
     jupyterlab==0.34.5 \
     boto3  \
+    bokeh>=0.13.0 \
     cartopy \
     distributed==1.24.0 \
     plotly \
