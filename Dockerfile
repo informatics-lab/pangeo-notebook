@@ -44,6 +44,7 @@ RUN conda install --yes \
     intake_iris \
     intake_s3_manifests \
     intake_dynamodb \
+    intake_geopandas \
     ipyleaflet \
     nc-time-axis \
     ncurses \
