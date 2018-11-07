@@ -58,6 +58,7 @@ RUN conda install --yes \
     && conda clean --tarballs -y
 
 RUN pip install --upgrade \
+    awscli \
     dask_kubernetes==0.6.0 \
     nbresuse \
     sidecar
