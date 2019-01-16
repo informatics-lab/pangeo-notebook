@@ -26,36 +26,36 @@ RUN conda install --yes \
     -c informaticslab \
     -c intake \
     -c pyviz \
-    jupyterlab==0.34.5 \
-    boto3  \
     bokeh>=0.13.0 \
+    boto3  \
     cartopy \
     contextily \
-    distributed>=1.24.0 \
+    cryptography>=2.3 \
+    data_ncic_pangeo \
     datashader==0.6.8 \
-    gdal \
-    plotly \
-    fusepy \
+    distributed>=1.24.0 \
     fiona \
+    fusepy \
+    gdal \
     geopandas \
     hvplot \
-    iris \
     intake>=0.2.7 \
-    intake_iris \
-    intake_s3_manifests \
     intake_dynamodb \
     intake_geopandas \
+    intake_iris \
+    intake_s3_manifests \
     ipyleaflet \
+    iris \
+    jade_utils==0.1.7 \
+    jupyterlab==0.34.5 \
+    jupyter_dashboards \
+    mo_pack \
+    nbpresent \
     nc-time-axis \
     ncurses \
-    jupyter_dashboards \
-    nbpresent \
     pandas>=0.23.4 \
+    plotly \
     pyviz_comms>=0.7.0 \
-    cryptography>=2.3 \
-    jade_utils==0.1.7 \
-    data_ncic_pangeo \
-    mo_pack \
     && conda clean --tarballs -y
 
 RUN pip install --upgrade \
