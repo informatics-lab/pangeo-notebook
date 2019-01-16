@@ -22,7 +22,6 @@ USER $NB_USER
 # Install extra Python 3 packages
 RUN conda install --yes \
     -c conda-forge \
-    -c scitools \
     -c bioconda \
     -c informaticslab \
     -c intake \
