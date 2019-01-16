@@ -52,6 +52,7 @@ RUN conda install --yes \
     jupyter_dashboards \
     nbpresent \
     pandas>=0.23.4 \
+    pyviz_comms>=0.7.0 \
     cryptography>=2.3 \
     jade_utils==0.1.7 \
     data_ncic_pangeo \
