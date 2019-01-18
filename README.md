@@ -7,7 +7,7 @@
 
 This image was previously called `singleuser-notebook`.
 
-This is a docker image which contains [Jupyter Notebook](https://github.com/jupyter/notebook) and [Jupyter Lab](https://github.com/jupyterlab/jupyterlab) along with a sensible Python envirnoment for performing environmental science analysis activities.
+This is a docker image which contains [Jupyter Notebook](https://github.com/jupyter/notebook) and [Jupyter Lab](https://github.com/jupyterlab/jupyterlab) along with a sensible Python environment for performing environmental science analysis activities.
 
 ## Usage
 
