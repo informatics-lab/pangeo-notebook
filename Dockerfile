@@ -22,10 +22,7 @@ USER $NB_USER
 # Install extra Python 3 packages
 RUN conda install --yes \
     -c conda-forge \
-    -c bioconda \
     -c informaticslab \
-    -c intake \
-    -c pyviz \
     bokeh>=0.13.0 \
     boto3  \
     cartopy \
