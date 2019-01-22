@@ -53,6 +53,7 @@ RUN conda install --yes \
     pandas>=0.23.4 \
     plotly \
     pyviz_comms>=0.7.0 \
+    voila \
     && conda clean --tarballs -y
 
 RUN pip install --upgrade \
