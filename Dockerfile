@@ -1,4 +1,4 @@
-FROM pangeo/notebook:78d567a
+FROM pangeo/pangeo-notebook:2019.01.27
 
 #####################################################################
 # Root                                                              #
