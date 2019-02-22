@@ -12,8 +12,9 @@ RUN apt-get update -y && apt-get install -y \
     libgl1-mesa-glx \
     texlive-xetex
 
-RUN curl -L https://github.com/jacobtomlinson/krontab/releases/download/v0.1.2/krontab-linux-amd64 -o /usr/local/bin/krontab && \
-    chmod +x /usr/local/bin/krontab
+RUN curl -L https://github.com/jacobtomlinson/krontab/releases/download/v0.1.3/krontab-linux-amd64 -o /usr/local/bin/krontab && \
+    chmod +x /usr/local/bin/krontab && \
+    ln -s /usr/local/bin/krontab /usr/local/bin/crontab
 
 
 #####################################################################
