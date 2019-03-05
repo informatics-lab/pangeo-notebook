@@ -1,4 +1,4 @@
-FROM pangeo/pangeo-notebook:2019.01.27
+FROM pangeo/pangeo-notebook:2019.02.10
 
 #####################################################################
 # Root                                                              #
@@ -8,9 +8,13 @@ USER root
 
 # Install system packages
 RUN apt-get update -y && apt-get install -y \
+    sudo \
     ssh \
     libgl1-mesa-glx \
     texlive-xetex
+
+# Fix conda permissions
+RUN chown -R 1000:1000 /srv/conda/pkgs/cache
 
 
 #####################################################################
@@ -29,22 +33,22 @@ RUN conda install --yes \
     contextily \
     cryptography>=2.3 \
     data_ncic_pangeo \
-    datashader==0.6.8 \
+    datashader>=0.6.8 \
     distributed>=1.24.0 \
     fiona \
     fusepy \
     gdal \
     geopandas \
     hvplot \
-    intake>=0.2.7 \
+    intake>=0.4.2 \
     intake_dynamodb \
     intake_geopandas \
     intake_iris \
     intake_s3_manifests \
     ipyleaflet \
     iris \
-    jade_utils==0.1.7 \
-    jupyterlab==0.34.5 \
+    jade_utils \
+    jupyterlab>=0.34.5 \
     jupyter_dashboards \
     mo_pack \
     nbpresent \
@@ -58,10 +62,10 @@ RUN conda install --yes \
 
 RUN pip install --upgrade \
     awscli \
-    dask_kubernetes==0.6.0 \
+    dask_kubernetes \
     nbresuse \
-    sidecar \
-    papermill
+    papermill \
+    sidecar
 
 # Install jupyter server extentions
 RUN jupyter labextension update --all
@@ -74,7 +78,3 @@ RUN jupyter labextension install \
     dask-labextension \
     jupyterlab_bokeh \
     jupyter-leaflet
-
-# Add Pete's fork of iris with lazy RMS 3/8/18. Remove after Iris 2.2.
-RUN pip install --upgrade \
-    https://github.com/dkillick/iris/archive/lazy_rms_agg.zip
