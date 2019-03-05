@@ -1,26 +1,24 @@
 sudo: required
-
 language: python
 python:
-  - '3.6'
-
+- '3.6'
 services:
-  - docker
-
+- docker
 script:
-  - docker build -t pangeo-notebook:${TRAVIS_COMMIT:0:8} .
-
+- docker build -t pangeo-notebook:${TRAVIS_COMMIT:0:8} .
 before_deploy:
-  - pip install awscli
-
+- pip install awscli
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: bash $TRAVIS_BUILD_DIR/deploy.sh
-    on:
-      branch: master
-  - provider: script
-    skip_cleanup: true
-    script: bash $TRAVIS_BUILD_DIR/deploy.sh
-    on:
-      tags: true
+- provider: script
+  skip_cleanup: true
+  script: bash $TRAVIS_BUILD_DIR/deploy.sh
+  on:
+    branch: master
+- provider: script
+  skip_cleanup: true
+  script: bash $TRAVIS_BUILD_DIR/deploy.sh
+  on:
+    tags: true
+notifications:
+  slack:
+    secure: oHvEBe9JzTxT8TGjGna7bUhxloyZbQFf6H5pBg8uSP8R8jp28h3tgAuf2vpXvyXRpveiM+rONtsl3RxMMS6QtMv+TVRona6/bJLFb+JbxvtmlfRXm82SSb2UhFVRG19+dXpNG32ymaHii3ZSM6B6EAB5/Dn4GsEE+yjDhXWXfn8AFk+GFsswtZZ494NIEHayPsi5OtXrLGmXVHLaej3DErRILDrWswK8z+zpBjP9NBQbqWAvhpYDqsjJEe+3beSeLi3jbx5nWxnO99Ur+nezdOAk1c7sHMuqwp5FhMMR6uvS8Gbl6N2XupncVxdQgYOgR/xnwqsvQS6NbFJmMOmm+YqCAyGfid6mMj6b3KALUvkhJQ1OLzITbYlNxWvpQTuFRo6R0+9c+SkE1mMjoXnfmRUdyjcChhco9XVaxuo5W0DLRwM6Ql7uK1aArZHYGZHxyUeNcw25oJ91lT3aI668fg3auzV6z7rAC5We/yMn4UU5VGoy3e5zprHAtG1GBSirRB6LGzGbJTcTPKVSmy3akwyKRQE8HbnxkCBskCU5ErfKfjJFDuDpwJi7F+9FtyiC82RImNO8vYTnIoRhwxxVPdUV7vsgRERlwH8uKFtK/GOl25MS6Q22muhGwEfnYnmVuoV85IQqyg8ITM0Vts73k4iypyWlR91sK6M+PfjQja0=
