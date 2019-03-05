@@ -13,9 +13,6 @@ RUN apt-get update -y && apt-get install -y \
     libgl1-mesa-glx \
     texlive-xetex
 
-# Fix conda permissions
-RUN chown -R 1000:1000 /srv/conda/pkgs/cache
-
 
 #####################################################################
 # User                                                              #
