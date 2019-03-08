@@ -75,7 +75,3 @@ RUN jupyter labextension install \
     dask-labextension \
     jupyterlab_bokeh \
     jupyter-leaflet
-
-# Install experimental jupyterlab extension
-RUN git clone https://github.com/informatics-lab/annotable-jupyterlab-extension.git
-RUN jupyter labextension install annotable-jupyterlab-extension
