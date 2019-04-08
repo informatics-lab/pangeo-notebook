@@ -43,14 +43,17 @@ RUN conda install --yes \
     intake>=0.2.7 \
     intake_dynamodb \
     intake_geopandas \
+    intake_hypothetic \
     intake_iris \
     intake_s3_manifests \
     ipyleaflet \
     iris \
+    iris_hypothetic \
     jade_utils==0.1.7 \
     jupyterlab==0.34.5 \
     jupyter_dashboards \
     mo_pack \
+    mo_aws_earth \
     nbpresent \
     nc-time-axis \
     ncurses \
