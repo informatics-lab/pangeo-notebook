@@ -53,7 +53,7 @@ RUN conda install --yes \
     jupyterlab==0.34.5 \
     jupyter_dashboards \
     mo_pack \
-    mo_aws_earth \
+    mo_aws_earth>=0.1.1 \
     nbpresent \
     nc-time-axis \
     ncurses \
