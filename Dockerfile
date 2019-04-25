@@ -55,6 +55,7 @@ RUN conda install --yes \
     plotly \
     pyviz_comms>=0.7.0 \
     voila \
+    itkwidgets \
     && conda clean --tarballs -y
 
 RUN pip install --upgrade \
@@ -71,7 +72,9 @@ RUN jupyter labextension install \
     @jupyterlab/plotly-extension \
     @jupyterlab/statusbar \
     @jupyter-widgets/jupyterlab-sidecar \
+    @jupyter-widgets/jupyterlab-manager \
     @pyviz/jupyterlab_pyviz \
+    itk-jupyter-widgets \
     dask-labextension \
     jupyterlab_bokeh \
     jupyter-leaflet
