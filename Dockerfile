@@ -44,6 +44,7 @@ RUN conda install --yes \
     intake_s3_manifests \
     ipyleaflet \
     iris \
+    itkwidgets \
     jade_utils \
     jupyterlab>=0.34.5 \
     jupyter_dashboards \
@@ -55,7 +56,6 @@ RUN conda install --yes \
     plotly \
     pyviz_comms>=0.7.0 \
     voila \
-    itkwidgets \
     && conda clean --tarballs -y
 
 RUN pip install --upgrade \
@@ -71,10 +71,10 @@ RUN jupyter labextension install \
     @jupyterlab/hub-extension \
     @jupyterlab/plotly-extension \
     @jupyterlab/statusbar \
-    @jupyter-widgets/jupyterlab-sidecar \
     @jupyter-widgets/jupyterlab-manager \
+    @jupyter-widgets/jupyterlab-sidecar \
     @pyviz/jupyterlab_pyviz \
-    itk-jupyter-widgets \
     dask-labextension \
+    itk-jupyter-widgets \
     jupyterlab_bokeh \
     jupyter-leaflet
