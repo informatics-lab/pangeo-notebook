@@ -74,4 +74,5 @@ RUN jupyter labextension install \
     @pyviz/jupyterlab_pyviz \
     dask-labextension \
     jupyterlab_bokeh \
-    jupyter-leaflet
+    jupyter-leaflet \
+    @informaticslab/henry
