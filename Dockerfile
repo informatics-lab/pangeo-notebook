@@ -44,6 +44,7 @@ RUN conda install --yes \
     intake_s3_manifests \
     ipyleaflet \
     iris \
+    itkwidgets \
     jade_utils \
     jupyterlab>=0.34.5 \
     jupyter_dashboards \
@@ -70,9 +71,11 @@ RUN jupyter labextension install \
     @jupyterlab/hub-extension \
     @jupyterlab/plotly-extension \
     @jupyterlab/statusbar \
+    @jupyter-widgets/jupyterlab-manager \
     @jupyter-widgets/jupyterlab-sidecar \
     @pyviz/jupyterlab_pyviz \
     dask-labextension \
+    itk-jupyter-widgets \
     jupyterlab_bokeh \
     jupyter-leaflet \
     @informaticslab/henry
