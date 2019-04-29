@@ -36,6 +36,8 @@ RUN conda install --yes \
     fusepy \
     gdal \
     geopandas \
+    geoviews \
+    holoviews \
     hvplot \
     intake>=0.4.2 \
     intake_dynamodb \
