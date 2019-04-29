@@ -13,6 +13,10 @@ RUN apt-get update -y && apt-get install -y \
     libgl1-mesa-glx \
     texlive-xetex
 
+RUN curl -L https://github.com/jacobtomlinson/krontab/releases/download/v0.1.6/krontab-linux-x86_64 -o /usr/local/bin/krontab && \
+    chmod +x /usr/local/bin/krontab && \
+    ln -s /usr/local/bin/krontab /usr/local/bin/crontab
+
 
 #####################################################################
 # User                                                              #
@@ -40,15 +44,18 @@ RUN conda install --yes \
     intake>=0.4.2 \
     intake_dynamodb \
     intake_geopandas \
+    intake_hypothetic \
     intake_iris \
     intake_s3_manifests \
     ipyleaflet \
     iris \
+    iris_hypothetic \
     itkwidgets \
     jade_utils \
     jupyterlab>=0.34.5 \
     jupyter_dashboards \
     mo_pack \
+    mo_aws_earth>=0.1.2 \
     nbpresent \
     nc-time-axis \
     ncurses \
@@ -68,6 +75,7 @@ RUN pip install --upgrade \
 # Install jupyter server extentions
 RUN jupyter labextension update --all
 RUN jupyter labextension install \
+    @informaticslab/henry
     @jupyterlab/hub-extension \
     @jupyterlab/plotly-extension \
     @jupyterlab/statusbar \
@@ -78,4 +86,3 @@ RUN jupyter labextension install \
     itk-jupyter-widgets \
     jupyterlab_bokeh \
     jupyter-leaflet \
-    @informaticslab/henry
