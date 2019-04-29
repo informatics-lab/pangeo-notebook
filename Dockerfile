@@ -75,7 +75,7 @@ RUN pip install --upgrade \
 # Install jupyter server extentions
 RUN jupyter labextension update --all
 RUN jupyter labextension install \
-    @informaticslab/henry
+    @informaticslab/henry \
     @jupyterlab/hub-extension \
     @jupyterlab/plotly-extension \
     @jupyterlab/statusbar \
@@ -85,4 +85,4 @@ RUN jupyter labextension install \
     dask-labextension \
     itk-jupyter-widgets \
     jupyterlab_bokeh \
-    jupyter-leaflet \
+    jupyter-leaflet
