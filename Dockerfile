@@ -72,6 +72,7 @@ RUN pip install --upgrade \
     dask_kubernetes \
     nbresuse \
     papermill \
+    qrcode \
     sidecar
 
 # Install jupyter server extentions
