@@ -39,6 +39,8 @@ RUN conda install --yes \
     fusepy \
     gdal \
     geopandas \
+    geoviews \
+    holoviews \
     hvplot \
     intake>=0.2.7 \
     intake_dynamodb \
@@ -80,7 +82,8 @@ RUN jupyter labextension install \
     @pyviz/jupyterlab_pyviz \
     dask-labextension \
     jupyterlab_bokeh \
-    jupyter-leaflet
+    jupyter-leaflet \
+    @informaticslab/henry
 
 # Add Pete's fork of iris with lazy RMS 3/8/18. Remove after Iris 2.2.
 RUN pip install --upgrade \
