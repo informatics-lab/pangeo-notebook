@@ -8,6 +8,7 @@ USER root
 
 # Install system packages
 RUN apt-get update -y && apt-get install -y \
+    less \
     sudo \
     ssh \
     libgl1-mesa-glx \
