@@ -16,7 +16,7 @@ This is a docker image which contains [Jupyter Notebook](https://github.com/jupy
 You can run this image locally in docker. You should mount your home directory into the container, expose the jupyter port and run the `jupyter lab` command if you wish to use Jupyter Lab (the default is `jupyter notebook`).
 
 ```
-docker run --rm -v $HOME:/home/jovyan -p 8888:8888 informaticslab/pangeo-notebook:latest jupyter lab
+docker run --rm -v $HOME:/home/jovyan -p 8888:8888 --user 1000:1000 informaticslab/pangeo-notebook:latest jupyter lab --ip=0.0.0.0 
 ```
 
 ### Pangeo
