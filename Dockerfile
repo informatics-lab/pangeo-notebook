@@ -1,4 +1,4 @@
-FROM pangeo/pangeo-notebook:2019.02.10
+FROM pangeo/pangeo-notebook:2019.05.19
 
 #####################################################################
 # Root                                                              #
@@ -26,10 +26,12 @@ RUN curl -L https://github.com/jacobtomlinson/krontab/releases/download/v0.1.6/k
 USER $NB_USER
 
 # Install extra Python 3 packages
-RUN conda install --yes \
+RUN conda install  -n notebook --yes \
     -c conda-forge \
     -c informaticslab \
-    bokeh>=0.13.0 \
+    -c creditx \
+    -c zeus1942 \
+    bokeh>=1.1.0 \
     boto3  \
     cartopy \
     contextily \
@@ -42,7 +44,7 @@ RUN conda install --yes \
     gdal \
     geopandas \
     geoviews \
-    holoviews \
+    holoviews>=1.12.0 \
     hvplot \
     intake>=0.4.2 \
     intake_dynamodb \
@@ -55,7 +57,7 @@ RUN conda install --yes \
     iris_hypothetic \
     itkwidgets \
     jade_utils \
-    jupyterlab>=0.34.5 \
+    jupyterlab>=0.35.6 \
     jupyter_dashboards \
     mo_pack \
     mo_aws_earth>=0.1.2 \
@@ -66,18 +68,19 @@ RUN conda install --yes \
     plotly \
     pyviz_comms>=0.7.0 \
     voila \
+    papermill \
+    dask-kubernetes>=0.8.0 \
+    nbresuse \
+    sidecar \
+    awscli \
+    qrcode \
     && conda clean --tarballs -y
 
-RUN pip install --upgrade \
-    awscli \
-    dask_kubernetes \
-    nbresuse \
-    papermill \
-    sidecar
-
-# Install jupyter server extentions
-RUN jupyter labextension update --all
-RUN jupyter labextension install \
+# Install jupyter server extentions. Want to ensure we are doing this in the "notebook" env
+SHELL ["/bin/bash", "-c"]
+RUN source activate notebook && \
+    jupyter labextension update --all && \
+    jupyter labextension install \
     @informaticslab/henry \
     @jupyterlab/hub-extension \
     @jupyterlab/plotly-extension \
