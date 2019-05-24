@@ -26,7 +26,7 @@ RUN curl -L https://github.com/jacobtomlinson/krontab/releases/download/v0.1.6/k
 USER $NB_USER
 
 # Install extra Python 3 packages
-RUN conda install   --yes \
+RUN conda install  -n notebook --yes \
     -c conda-forge \
     -c informaticslab \
     -c creditx \
@@ -75,11 +75,11 @@ RUN conda install   --yes \
     awscli \
     && conda clean --tarballs -y
 
-RUN python -m ipykernel install --user --name base --display-name "Python (base)"
-
-# Install jupyter server extentions
-RUN jupyter labextension update --all
-RUN jupyter labextension install \
+# Install jupyter server extentions. Want to ensure we are doing this in the "notebook" env
+SHELL ["/bin/bash", "-c"]
+RUN source activate notebook && \
+    jupyter labextension update --all && \
+    jupyter labextension install \
     @informaticslab/henry \
     @jupyterlab/hub-extension \
     @jupyterlab/plotly-extension \
