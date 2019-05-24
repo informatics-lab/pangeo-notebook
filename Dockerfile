@@ -31,11 +31,13 @@ RUN conda install  -n notebook --yes \
     -c informaticslab \
     -c creditx \
     -c zeus1942 \
+    awscli \
     bokeh>=1.1.0 \
     boto3  \
     cartopy \
     contextily \
     cryptography>=2.3 \
+    dask-kubernetes>=0.8.0 \
     data_ncic_pangeo \
     datashader>=0.6.8 \
     distributed>=1.24.0 \
@@ -49,31 +51,29 @@ RUN conda install  -n notebook --yes \
     intake>=0.4.2 \
     intake_dynamodb \
     intake_geopandas \
-    intake_hypothetic \
+    intake_hypothetic>=0.1.4 \
     intake_iris \
     intake_s3_manifests \
     ipyleaflet \
     iris \
-    iris_hypothetic \
+    iris_hypothetic>=0.1.7 \
     itkwidgets \
     jade_utils \
     jupyterlab>=0.35.6 \
     jupyter_dashboards \
     mo_pack \
-    mo_aws_earth>=0.1.2 \
+    mo_aws_earth>=0.2.3 \
     nbpresent \
+    nbresuse \
     nc-time-axis \
     ncurses \
+    papermill \
     pandas>=0.23.4 \
     plotly \
     pyviz_comms>=0.7.0 \
-    voila \
-    papermill \
-    dask-kubernetes>=0.8.0 \
-    nbresuse \
-    sidecar \
-    awscli \
     qrcode \
+    sidecar \
+    voila \
     && conda clean --tarballs -y
 
 # Install jupyter server extentions. Want to ensure we are doing this in the "notebook" env
