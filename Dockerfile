@@ -73,6 +73,7 @@ RUN conda install  -n notebook --yes \
     nbresuse \
     sidecar \
     awscli \
+    qrcode \
     && conda clean --tarballs -y
 
 # Install jupyter server extentions. Want to ensure we are doing this in the "notebook" env
