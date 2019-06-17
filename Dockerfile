@@ -69,6 +69,7 @@ RUN conda install  -n notebook --yes \
     ncurses \
     papermill \
     pandas>=0.23.4 \
+    panel>=0.5.1 \
     plotly \
     pyviz_comms>=0.7.0 \
     qrcode \
