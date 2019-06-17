@@ -60,6 +60,7 @@ RUN conda install --yes \
     nc-time-axis \
     ncurses \
     pandas>=0.23.4 \
+    panel \
     plotly \
     pyviz_comms>=0.7.0 \
     voila \
@@ -82,8 +83,7 @@ RUN jupyter labextension install \
     @pyviz/jupyterlab_pyviz \
     dask-labextension \
     jupyterlab_bokeh \
-    jupyter-leaflet \
-    @informaticslab/henry
+    jupyter-leaflet
 
 # Add Pete's fork of iris with lazy RMS 3/8/18. Remove after Iris 2.2.
 RUN pip install --upgrade \
