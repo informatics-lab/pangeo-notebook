@@ -52,7 +52,7 @@ RUN conda install --yes \
     iris \
     iris_hypothetic \
     jade_utils==0.1.7 \
-    jupyterlab==0.34.5 \
+    jupyterlab>=0.35.6 \
     jupyter_dashboards \
     mo_pack \
     mo_aws_earth>=0.1.2 \
