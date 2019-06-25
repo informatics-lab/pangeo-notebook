@@ -83,6 +83,7 @@ RUN jupyter labextension install \
     @jupyter-widgets/jupyterlab-sidecar \
     @pyviz/jupyterlab_pyviz \
     dask-labextension \
+    itk-jupyter-widgets \
     jupyterlab_bokeh \
     jupyter-leaflet
 
