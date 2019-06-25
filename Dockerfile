@@ -79,6 +79,7 @@ RUN jupyter labextension install \
     @jupyterlab/hub-extension \
     @jupyterlab/plotly-extension \
     @jupyterlab/statusbar \
+    @jupyter-widgets/jupyterlab-manager \
     @jupyter-widgets/jupyterlab-sidecar \
     @pyviz/jupyterlab_pyviz \
     dask-labextension \
