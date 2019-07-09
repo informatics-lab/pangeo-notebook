@@ -56,7 +56,7 @@ RUN conda install  -n notebook --yes \
     intake_s3_manifests \
     ipyleaflet \
     iris \
-    iris_hypothetic>=0.1.7 \
+    iris_hypothetic>=0.1.8 \
     itkwidgets \
     jade_utils \
     jupyterlab>=0.35.6 \
