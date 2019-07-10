@@ -85,7 +85,6 @@ RUN source activate notebook && \
     @informaticslab/henry \
     @jupyterlab/hub-extension \
     @jupyterlab/plotly-extension \
-    @jupyterlab/statusbar \
     @jupyter-widgets/jupyterlab-manager \
     @jupyter-widgets/jupyterlab-sidecar \
     @pyviz/jupyterlab_pyviz \
