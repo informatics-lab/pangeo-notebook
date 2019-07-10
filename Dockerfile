@@ -37,10 +37,11 @@ RUN conda install  -n notebook --yes \
     cartopy \
     contextily \
     cryptography>=2.3 \
+    dask=1 \
     dask-kubernetes>=0.8.0 \
     data_ncic_pangeo \
     datashader>=0.6.8 \
-    distributed>=1.24.0 \
+    "distributed>=1.24.0,<2" \
     fiona \
     fusepy \
     gdal \
