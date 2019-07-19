@@ -25,6 +25,8 @@ RUN curl -L https://github.com/jacobtomlinson/krontab/releases/download/v0.1.6/k
 
 USER $NB_USER
 
+RUN git clone $EXAMPLES_GIT_URL $HOME/examples
+
 # Install extra Python 3 packages
 RUN conda install  -n notebook --yes \
     -c conda-forge \
