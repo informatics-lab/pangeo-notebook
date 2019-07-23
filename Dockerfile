@@ -23,8 +23,8 @@ ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 
-# Add NB_USER to sudo
-RUN echo "$NB_USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/notebook
+# Add USER to sudo
+RUN echo "$USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/notebook
 RUN sed -ri "s#Defaults\s+secure_path=\"([^\"]+)\"#Defaults secure_path=\"\1:$CONDA_DIR/bin\"#" /etc/sudoers
 
 # Add prepare script for copying examples dir to single user homespaces.
@@ -35,7 +35,7 @@ RUN chmod +x /usr/bin/prepare_homespace.sh
 # User                                                              #
 #####################################################################
 
-USER $NB_USER
+USER $USER
 
 # Install extra Python 3 packages
 RUN conda install  -n notebook --yes \
