@@ -108,4 +108,3 @@ RUN source activate notebook && \
 
 # Prepare script added above in the root commands section.
 ENTRYPOINT ["/tini", "--", "/usr/bin/prepare_homespace.sh"]
-CMD ["start.sh jupyter lab"]
