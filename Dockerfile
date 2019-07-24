@@ -18,12 +18,24 @@ RUN curl -L https://github.com/jacobtomlinson/krontab/releases/download/v0.1.6/k
     chmod +x /usr/local/bin/krontab && \
     ln -s /usr/local/bin/krontab /usr/local/bin/crontab
 
+# Add Tini - see https://github.com/krallin/tini#using-tini.
+ENV TINI_VERSION v0.18.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
+
+# Add USER to sudo
+RUN echo "$USER ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/notebook
+RUN sed -ri "s#Defaults\s+secure_path=\"([^\"]+)\"#Defaults secure_path=\"\1:$CONDA_DIR/bin\"#" /etc/sudoers
+
+# Add prepare script for copying examples dir to single user homespaces.
+COPY prepare_homespace.sh /usr/bin/prepare_homespace.sh
+RUN chmod +x /usr/bin/prepare_homespace.sh
 
 #####################################################################
 # User                                                              #
 #####################################################################
 
-USER $NB_USER
+USER $USER
 
 # Install extra Python 3 packages
 RUN conda install  -n notebook --yes \
@@ -93,3 +105,6 @@ RUN source activate notebook && \
     itk-jupyter-widgets \
     jupyterlab_bokeh \
     jupyter-leaflet
+
+# Prepare script added above in the root commands section.
+ENTRYPOINT ["/tini", "--", "/usr/bin/prepare_homespace.sh"]
