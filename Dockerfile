@@ -59,6 +59,7 @@ RUN conda install  -n notebook --yes \
     gdal \
     geopandas \
     geoviews \
+    h5netcdf \
     holoviews>=1.12.0 \
     hvplot \
     intake>=0.4.2 \
