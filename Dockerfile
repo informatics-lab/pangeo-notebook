@@ -31,6 +31,9 @@ RUN sed -ri "s#Defaults\s+secure_path=\"([^\"]+)\"#Defaults secure_path=\"\1:$CO
 COPY prepare_homespace.sh /usr/bin/prepare_homespace.sh
 RUN chmod +x /usr/bin/prepare_homespace.sh
 
+# Update conda
+RUN conda update -n base conda --yes
+
 #####################################################################
 # User                                                              #
 #####################################################################
@@ -49,11 +52,11 @@ RUN conda install  -n notebook --yes \
     cartopy \
     contextily \
     cryptography>=2.3 \
-    dask=1 \
+    dask \
     dask-kubernetes>=0.8.0 \
     data_ncic_pangeo \
     datashader>=0.6.8 \
-    "distributed>=1.24.0,<2" \
+    distributed>=1.24.0 \
     fiona \
     fusepy \
     gdal \
