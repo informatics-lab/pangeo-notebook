@@ -94,6 +94,8 @@ RUN conda install  -n notebook --yes \
     voila \
     && conda clean --tarballs -y
 
+RUN conda update -n notebook --all --yes
+
 # Install jupyter server extentions. Want to ensure we are doing this in the "notebook" env
 SHELL ["/bin/bash", "-c"]
 RUN source activate notebook && \
