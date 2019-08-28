@@ -11,6 +11,7 @@ RUN apt-get update -y && apt-get install -y \
     less \
     sudo \
     ssh \
+    vim-tiny \
     libgl1-mesa-glx \
     texlive-xetex
 
