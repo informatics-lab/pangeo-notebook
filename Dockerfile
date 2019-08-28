@@ -82,7 +82,7 @@ RUN conda install  -n notebook --yes \
     mo_pack \
     mo_aws_earth>=0.2.3 \
     nbpresent \
-    nbresuse \
+    nbresuse<0.3.3 \
     nc-time-axis \
     ncurses \
     papermill \
