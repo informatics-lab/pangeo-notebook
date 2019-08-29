@@ -77,7 +77,7 @@ RUN conda install  -n notebook --yes \
     "iris_hypothetic>=0.1.8" \
     itkwidgets \
     jade_utils \
-    "jupyterlab>=0.35.6" \
+    "jupyterlab<1.1.0" \
     jupyter_dashboards \
     mo_pack \
     "mo_aws_earth>=0.2.3" \
