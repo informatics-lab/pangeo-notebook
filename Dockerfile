@@ -1,4 +1,4 @@
-FROM pangeo/pangeo-notebook:2019.05.19
+FROM pangeo/pangeo-notebook:2019.08.26
 
 #####################################################################
 # Root                                                              #
@@ -45,57 +45,55 @@ USER $USER
 RUN conda install  -n notebook --yes \
     -c conda-forge \
     -c informaticslab \
-    -c creditx \
+    -c defusco \
     -c zeus1942 \
     awscli \
-    bokeh>=1.1.0 \
+    "bokeh>=1.1.0" \
     boto3  \
     cartopy \
     contextily \
-    cryptography>=2.3 \
+    "cryptography>=2.3" \
     dask \
-    dask-kubernetes>=0.8.0 \
+    "dask-kubernetes>=0.8.0" \
     data_ncic_pangeo \
-    datashader>=0.6.8 \
-    distributed>=1.24.0 \
+    "datashader>=0.6.8" \
+    "distributed>=1.24.0" \
     fiona \
     fusepy \
     gdal \
     geopandas \
     geoviews \
     h5netcdf \
-    holoviews>=1.12.0 \
+    "holoviews>=1.12.0" \
     hvplot \
-    intake>=0.4.2 \
+    "intake>=0.4.2" \
     intake_dynamodb \
     intake_geopandas \
-    intake_hypothetic>=0.1.4 \
+    "intake_hypothetic>=0.1.4" \
     intake_iris \
     intake_s3_manifests \
     ipyleaflet \
     iris \
-    iris_hypothetic>=0.1.8 \
+    "iris_hypothetic>=0.1.8" \
     itkwidgets \
     jade_utils \
-    jupyterlab>=0.35.6 \
+    "jupyterlab>=0.35.6" \
     jupyter_dashboards \
     mo_pack \
-    mo_aws_earth>=0.2.3 \
+    "mo_aws_earth>=0.2.3" \
     nbpresent \
-    nbresuse<0.3.3 \
+    nbresuse \
     nc-time-axis \
     ncurses \
     papermill \
-    pandas>=0.23.4 \
-    panel>=0.5.1 \
+    "pandas>=0.23.4" \
+    "panel>=0.5.1" \
     plotly \
-    pyviz_comms>=0.7.0 \
+    "pyviz_comms>=0.7.0" \
     qrcode \
     sidecar \
     voila \
     && conda clean --tarballs -y
-
-RUN conda update -n notebook --all --yes
 
 # Install jupyter server extentions. Want to ensure we are doing this in the "notebook" env
 SHELL ["/bin/bash", "-c"]
