@@ -1,4 +1,4 @@
-FROM pangeo/pangeo-notebook:2019.05.19
+FROM pangeo/pangeo-notebook:2019.08.26
 
 #####################################################################
 # Root                                                              #
@@ -11,6 +11,7 @@ RUN apt-get update -y && apt-get install -y \
     less \
     sudo \
     ssh \
+    vim-tiny \
     libgl1-mesa-glx \
     texlive-xetex
 
@@ -31,6 +32,9 @@ RUN sed -ri "s#Defaults\s+secure_path=\"([^\"]+)\"#Defaults secure_path=\"\1:$CO
 COPY prepare_homespace.sh /usr/bin/prepare_homespace.sh
 RUN chmod +x /usr/bin/prepare_homespace.sh
 
+# Update conda
+RUN conda update -n base conda --yes
+
 #####################################################################
 # User                                                              #
 #####################################################################
@@ -41,51 +45,51 @@ USER $USER
 RUN conda install  -n notebook --yes \
     -c conda-forge \
     -c informaticslab \
-    -c creditx \
+    -c defusco \
     -c zeus1942 \
     awscli \
-    bokeh>=1.1.0 \
+    "bokeh>=1.1.0" \
     boto3  \
     cartopy \
     contextily \
-    cryptography>=2.3 \
-    dask=1 \
-    dask-kubernetes>=0.8.0 \
+    "cryptography>=2.3" \
+    dask \
+    "dask-kubernetes>=0.8.0" \
     data_ncic_pangeo \
-    datashader>=0.6.8 \
-    "distributed>=1.24.0,<2" \
+    "datashader>=0.6.8" \
+    "distributed>=1.24.0" \
     fiona \
     fusepy \
     gdal \
     geopandas \
     geoviews \
     h5netcdf \
-    holoviews>=1.12.0 \
+    "holoviews>=1.12.0" \
     hvplot \
-    intake>=0.4.2 \
+    "intake>=0.4.2" \
     intake_dynamodb \
     intake_geopandas \
-    intake_hypothetic>=0.1.4 \
+    "intake_hypothetic>=0.1.4" \
     intake_iris \
     intake_s3_manifests \
     ipyleaflet \
     iris \
-    iris_hypothetic>=0.1.8 \
+    "iris_hypothetic>=0.1.8" \
     itkwidgets \
     jade_utils \
-    jupyterlab>=0.35.6 \
+    "jupyterlab<1.1.0" \
     jupyter_dashboards \
     mo_pack \
-    mo_aws_earth>=0.2.3 \
+    "mo_aws_earth>=0.2.3" \
     nbpresent \
     nbresuse \
     nc-time-axis \
     ncurses \
     papermill \
-    pandas>=0.23.4 \
-    panel>=0.5.1 \
+    "pandas>=0.23.4" \
+    "panel>=0.5.1" \
     plotly \
-    pyviz_comms>=0.7.0 \
+    "pyviz_comms>=0.7.0" \
     qrcode \
     sidecar \
     voila \
