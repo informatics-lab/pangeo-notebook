@@ -41,6 +41,8 @@ RUN conda update -n base conda --yes
 
 USER $USER
 
+ENTRYPOINT [ "/copy_examples.sh" ]
+
 # Install extra Python 3 packages
 RUN conda install  -n notebook --yes \
     -c conda-forge \
