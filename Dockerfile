@@ -41,6 +41,8 @@ RUN conda update -n base conda --yes
 
 USER $USER
 
+RUN git clone $EXAMPLES_GIT_URL $HOME/examples
+
 # Install extra Python 3 packages
 RUN conda install  -n notebook --yes \
     -c conda-forge \
